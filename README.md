@@ -5,7 +5,7 @@ Mobile-friendly Conway's Game of Life, built with vanilla HTML/CSS/JS.
 ## Features
 - Tap/click to toggle cells on the board (canvas-based, performant)
 - Play/Pause, Step, Clear, Random
-- Adjustable grid size (10–60) and speed (50–800 ms)
+- Adjustable grid size (10–120) and speed (50–800 ms)
 - Responsive UI with dark styling (mobile-optimized)
 
 ## Run locally

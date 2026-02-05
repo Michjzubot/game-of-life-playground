@@ -17,7 +17,7 @@ let running = false;
 let timer = null;
 
 function resizeCanvas() {
-  const dim = Math.min(window.innerWidth - 30, 720);
+  const dim = Math.min(window.innerWidth - 20, 900);
   canvas.width = dim;
   canvas.height = dim;
   cellSize = canvas.width / cols;
