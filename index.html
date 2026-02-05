@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Game of Life Playground</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Game of Life Playground</h1>
+    <p>Tap to toggle cells, then run the simulation. Optimized for mobile.</p>
+  </header>
+
+  <main>
+    <section class="controls">
+      <div class="row">
+        <button id="playPause">▶ Play</button>
+        <button id="step">Step</button>
+        <button id="clear">Clear</button>
+        <button id="random">Random</button>
+      </div>
+      <div class="row sliders">
+        <label>Grid size
+          <input id="size" type="range" min="10" max="60" value="25" />
+          <span id="sizeValue">25</span>
+        </label>
+        <label>Speed (ms per gen)
+          <input id="speed" type="range" min="50" max="800" value="200" />
+          <span id="speedValue">200</span>
+        </label>
+      </div>
+    </section>
+
+    <section class="board-wrapper">
+      <canvas id="board" width="600" height="600" aria-label="Game of Life board"></canvas>
+    </section>
+  </main>
+
+  <footer>
+    <p>Conway's Game of Life. Made for quick experimentation.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

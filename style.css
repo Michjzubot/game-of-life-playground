@@ -1,0 +1,94 @@
+:root {
+  color-scheme: light dark;
+  --bg: #0f172a;
+  --panel: #1e293b;
+  --text: #e2e8f0;
+  --accent: #22d3ee;
+  --accent-strong: #06b6d4;
+  --muted: #94a3b8;
+  --border: #233044;
+  --cell: #38bdf8;
+  --cell-off: #0b1220;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Inter", "Segoe UI", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 12px;
+}
+
+header h1 { margin: 0 0 4px; font-size: clamp(1.3rem, 3vw, 1.8rem); }
+header p { margin: 0; color: var(--muted); font-size: 0.95rem; }
+
+main { display: flex; flex-direction: column; gap: 12px; }
+
+.controls {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+.controls .row { display: flex; gap: 8px; flex-wrap: wrap; }
+.controls button {
+  flex: 1 1 120px;
+  padding: 10px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: linear-gradient(135deg, var(--accent), var(--accent-strong));
+  color: #0a0f1a;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.05s ease, filter 0.1s ease;
+}
+.controls button:active { transform: translateY(1px); filter: brightness(0.95); }
+
+.controls .sliders { gap: 16px; }
+.controls label {
+  flex: 1 1 220px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+.controls input[type="range"] { width: 100%; }
+.controls span { color: var(--text); font-weight: 600; }
+
+.board-wrapper {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 8px;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.03), 0 10px 30px rgba(0,0,0,0.25);
+}
+
+canvas {
+  width: 100%;
+  max-width: 700px;
+  aspect-ratio: 1 / 1;
+  display: block;
+  margin: 0 auto;
+  border-radius: 12px;
+  background: var(--cell-off);
+}
+
+footer { color: var(--muted); font-size: 0.9rem; }
+
+a { color: var(--accent); }
+
+@media (max-width: 600px) {
+  body { padding: 10px; }
+  .controls { padding: 10px; }
+  .controls button { flex: 1 1 45%; }
+}
